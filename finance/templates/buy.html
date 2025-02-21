@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    {% if latest_transaction %}
+        <p>Latest Transaction:</p>
+        <ul>
+            <li>Symbol: {{ latest_transaction.symbol }}</li>
+            <li>Shares: {{ latest_transaction.shares }}</li>
+            <li>Price: {{ latest_transaction.price | usd}}</li>
+            <li>Timestamp: {{ latest_transaction.transacted }}</li>
+        </ul>
+    {% else %}
+        <form action="/buy" method="post">
+            <div class="form-group">
+                <input type="text" name="symbol" placeholder="symbol" required>
+            </div>
+            <div class="form-group">
+                <input type="number" name="shares" placeholder="Shares" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Buy</button>
+        </form>
+    {% endif %}
+{% endblock %}

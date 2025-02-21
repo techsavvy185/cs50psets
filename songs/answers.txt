@@ -1,0 +1,3 @@
+Their audio aura would be characterised by the average of the energy , valence and danceability of the songs listened to by the user/
+
+This aura might not be very representative of the person as some of the songs might have very low values while others have very high values. Median is a better measure for such values.
